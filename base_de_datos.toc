@@ -1,0 +1,8 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Modelado Entidad - Relaci\IeC {\'o}n}{2}
+\contentsline {section}{\numberline {1.1}Conjuto de Entidades}{2}
+\contentsline {subsubsection}{Notaciones de diagrama}{2}
+\contentsline {section}{\numberline {1.2}Claves}{2}
+\contentsline {section}{\numberline {1.3}Correspondencia de cardinales}{3}
+\contentsline {section}{\numberline {1.4}Formas de participaci\IeC {\'o}n}{3}
+\contentsline {section}{\numberline {1.5}Conjunto de entidades d\IeC {\'e}biles}{3}
