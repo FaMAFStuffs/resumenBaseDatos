@@ -354,14 +354,17 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 
 			\begin{figure}[htb]
 				\centering
-				\includegraphics[width=4cm, height=2cm]{./imagenes/seleccion1.png}
+				\includegraphics[width=3cm, height=3cm]{./imagenes/seleccion1.png}
 				\caption{Relación \textit{r}}
+				\vspace{5mm}
 				\includegraphics[width=3cm, height=2cm]{./imagenes/seleccion2.png}
 				\caption{$\sigma_{A=B \; \land \; D > 5}(r)$}
 			\end{figure}
 
+	\pagebreak
 	\section{Proyección}
 		\par \textbf{Notación:} $\sqcap_{A_{1}, A_{2} \dotsc A_{k}}(r)$
+		\vspace{3mm}
 		\par \textbf{Semántica:}
 		\begin{itemize}
 			\item relación de k columnas obtenida de borrar columnas que no son listadas
@@ -370,8 +373,9 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 		
 		\begin{figure}[htb]
 				\centering
-				\includegraphics[width=4cm, height=2cm]{./imagenes/proyeccion1.png}
+				\includegraphics[width=2.5cm, height=3cm]{./imagenes/proyeccion1.png}
 				\caption{Relación \textit{r}}
+				\vspace{5mm}
 				\includegraphics[width=3cm, height=2cm]{./imagenes/proyeccion2.png}
 				\caption{$\sqcap_{A, C}(r)$}
 		\end{figure}
@@ -380,14 +384,16 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 		\par \textbf{Notación:} $\sqcap_{F_{1}, F_{2} \dotsc F_{n}}(E)$
 		\par Donde los $F_{1}, F_{2} \dotsc F_{n}$ son expresiones aritméticas involucrando constantes y atributos de E. Puedo permutar orden de atributos de \textit{r}.
 		
+		\vspace{5mm}
 		\par \underline{Ejemplo:} obtener el salario mensual de un instructor
 		\begin{center} instructor(ID, name, dept name, salary) \\ salary: es salario anual \end{center}
 		\[\sqcap_{ID, name, dept_name, salary \div 12} \; (instructor)\]
 
 		\begin{figure}[htb]
 				\centering
-				\includegraphics[width=4cm, height=2cm]{./imagenes/proyeccion1.png}
+				\includegraphics[width=2cm, height=2cm]{./imagenes/proyeccion1.png}
 				\caption{Relación \textit{r}}
+				\vspace{5mm}
 				\includegraphics[width=3cm, height=2cm]{./imagenes/proyeccion2.png}
 				\caption{$\sqcap_{A=B \; \land \; D > 5}(r)$}
 		\end{figure}
@@ -401,25 +407,316 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 		\end{itemize}
 		\par Condiciones para que estas operaciones tengan sentido.
 		\begin{enumerate}
-			\item Ambas relaciones deben tener el mismo número de atributos
+			\item Ambas relaciones deben tener el mismo número de atributos.
 			\item Los dominios de atributos de la misma posición deben ser iguales.
 		\end{enumerate}
 
 	\section{Producto cartesiano}
-	
+		\par \underline{Definición:} $r \; x \; s := \lbrace t \; q \; | \; t \in r \land q \in s \rbrace$
+		\vspace{5mm}
+		\par Esquema de $r \; x \; s$ (r(R) y s(S)):
+		\begin{itemize}
+			\item Si R y S son disjuntos: R . S
+			\item Si R y S no son disjuntos, se debe usar renombramiento.
+		\end{itemize}
+
+		\par \underline{Ejemplo:}
+		\[instructor(ID, name, dept\_name, salary) \]
+		\[teaches(ID, course id, sec id, semester, year) \]
+		\par El esquema de $r = instructor \; x \; teaches$ es:
+		\[ (instructor.ID, instructor.name, instructor.dept\_name, instructor.salary, teaches.ID, teaches.course\_id, teaches.sec\_id, teaches.semester, teaches.year)
+		\]
+		\par El esquema anterior se puede simplificar a:
+		\[
+		(instructor.ID, name, dept\_name, salary, teaches.ID, course\_id, sec\_id, semester, year) \]
+
+		\par Como consecuencias de la convención anterior, no se puede aplicar a $r \; x \; r$ y tampoco se puede aplicar a $r \; x \; E$ con E expresión de consulta arbitraria.
+		
+			\begin{figure}[htb]
+				\centering
+				\includegraphics[width=4cm, height=3cm]{./imagenes/pc1.png}
+				\caption{Relaciones \textit{r} \textit{s}}
+				\vspace{5mm}
+				\includegraphics[width=4cm, height=5cm]{./imagenes/pc2.png}
+				\caption{$r \; x \; s$}
+			\end{figure}
+		
 	\section{Renombramiento}
+		\par Se quiere poder aplicar operador de AR a expresión E arbitraria de AR, sin embargo para operadores selección y proyección es necesario tener acceso a nombres de atributos, es decir, que se necesita que expresiones arbitrarias de AR tengan nombres para las columnas de las tablas que representan.
+
+		\subsubsection{¿Cómo dar nombres de atributo a columnas de tabla asociada a expresión de consulta de AR?}
+			\par La solución esta en asociar un esquema a una expresión de ER mediante el mecanismo de renombramiento. Si la tabla de una expresión de AR E tiene aridad \textit{n}, entonces:
+			\[ \rho_{x \; (A_{1}, A_{2} \dotsc A_{n})}(E)\]
+
+			\par retorna la tabla de E con nombre X y con atributos renombrados a $A_{1}, A_{2} \dotsc A_{n}$.
+
+			\vspace{5mm}
+			\underline{Ejemplo:}
+			$\qquad \sigma_{x . A_{1} \; = \; r . A_{1}}(\rho_{x \; (A_{1}, A_{2} \dotsc A_{n})} (E) \; x \; r) $, r tabla de la BD.
+			\par Notar que necesito dar nombre X a E para poder decir a cuál atributo A1 me refiero.
+			
+			\vspace{5mm}			
+			\par A veces solo necesito darle nombre a la tabla de una expresión de AR, por lo que asociamos nombre a una expresión de AR mediante el mecanismo de renombramiento simplificado.
+\begin{itemize}
+	\item $\rho_{x}(E)$ retorna la tabla de E con el nombre X.
+	\item Por ejemplo: para \textit{r} relación de BD, puedo expresar $(\rho_{s}(r)) \; x \; r$.
+\end{itemize}
+
+
+	\section{Definición del AR}
+		\par Una expresión básica del AR consiste de una de las siguientes:
+		\begin{itemize}
+			\item Una relación de la BD
+			\item Una relación constante
+		\end{itemize}		 
+		\par Si E1 y E2 son expresiones del AR, entonces las siguientes son expresiones del AR:
+		\begin{itemize}
+			\item $E1\cup E2$
+			\item $E1 - E2$
+			\item $E1\; x \; E2$
+			\item $\sigma_{p}(E1)$, p predicado en atributos de E.
+			\item $\sqcap_{s}(E1)$, S lista con algunos de los atributos de E1.
+			\item $\rho_{x}(E1)$, x es un nombre para el resultado de E1.
+			\item $\rho_{x \; (A_{1}, \dotsc A_{n})}(E1), \; A_{1}, \dotsc A_{n}$, son nombres de atributos y x es un nombre para el resultado de E1.
+		\end{itemize}
+
+
+	\section{Vínculo de AR con SQL}
+		\par En el proyecto de taller trabajaremos con expresiones \textbf{select-from-where} de SQL con sintaxis:
+		\begin{itemize}
+			\item select distinct $A_{1}, \dotsc A_{n}$
+			\item from $r_{1}, \dotsc r_{n}$
+			\item where P
+		\end{itemize}
+
+		\par Son equivalentes a:
+		\[\sqcap_{A_{1}, A_{2} \dotsc A_{n}}(\sigma_{p}(r_{1} \; x \; r_{2} \dotsc \; x \; r_{n})) \]
+		\par Esto es cierto si $r_{1}, r_{2} \dotsc r_{n}$ son relaciones, sino hay que definir AR para multiconjuntos.
 
 	\section{Reunión natural}
-	
+		\par Se puede operar con esquemas de relación, para eso podemos definir algunos operadores sobre esquemas. Se comportan como operaciones sobre listas de atributos.
+		\begin{itemize}
+			\item $S – R$: a S le quito los atributos que también están en R.
+			\item $S . R$: la lista de S seguida de la lista de R (concatenación).
+			\item $R \cup S := R . (S – R)$.
+		\end{itemize}
+		\par \underline{\textbf{Notación:}} $r \bowtie s$. Sean r(R) y s(S), entonces $r \bowtie s$ ($R \cup S$).
+		\vspace{5mm}		
+		\par $r \bowtie s$ se obtiene como sigue:
+		\begin{itemize}
+			\item Sean $t_{r} \in r \; y \; t_{s} \in s$ tal que $t_{r}$ y $t_{s}$ tienen los mismos valores en $R \cap S$ (o sea $t_{r}$ y $t_{s}$ cazan)
+			\item Si \textit{t} concuerda con $t_{r}$ en R y \textit{t} concuerda con $t_{s}$ en S, entonces $t \in r \bowtie s$.
+		\end{itemize}
+			
+		\begin{figure}[htb]
+				\centering
+				\includegraphics[width=5cm, height=3cm]{./imagenes/nj1.png}
+				\caption{Relaciones \textit{r} y \textit{s}}
+				\vspace{5mm}
+				\includegraphics[width=3cm, height=3cm]{./imagenes/nj2.png}
+				\caption{$r \; x \; s$}
+		\end{figure}
+
+		\underline{Ejemplo:}
+		\begin{itemize}
+			\item $R = (A, B, C, D)$
+			\item $S = (E, B, D)$
+			\item $R \cup S = (A, B, C, D, E)$
+			\item $r \bowtie s = \sqcap_{r.A, \; r.B, \; r.C, \; r.D, \; s.E}(\sigma_{r.B = s.B \; \land \; r.D = s.D} (r \; x \; s))$
+			\item En general:
+			\[r \bowtie s = \sqcap_{R \cup S}(\sigma_{r.A_{1}=s.A_{1} \; \land \; \dotsc \; \land \; r.A_{n} = s.A_{n}} (r \; x \; s)), \; donde \; R \cap S = \lbrace {A_{1}, \dotsc A_{n}} \rbrace\]
+		\end{itemize}
+		\par Algunas propiedades interesantes: r(R), s(S), u(U):
+		\begin{itemize}
+			\item $(r \bowtie s) \bowtie u = (r \bowtie (s \bowtie u))$
+			\item $R \cap S = \emptyset \Rightarrow r \bowtie s = r \; x \; s$
+			\item $R = S \Rightarrow r \bowtie s = r \cap s$
+		\end{itemize}
+		
+		\underline{Ejemplo:}
+		\begin{itemize}
+			\item persona(DNI, nombre,apellido)
+			\item libro(título,ISBN,editorial,edición)
+			\item libroBib(numInv,ISBN,nombreBib)
+			\item prestadoA(numInv,nombreBib,DNI)
+			\item socio(posición,DNI)
+			\item inscriptoEn(DNI,nombreBib)
+		\end{itemize}
+		\par Obtener los ISBN de los libros prestados a Juan Pérez en la biblioteca de “FaMAF”.
+
 	\section{División}
+		\par La operación división, resulta adecuada para muchas consultas que incluyen la frase “para todo” o “todos”.
+		\vspace{5mm}
+		\par \underline{Notación:} $r \div s$.
+		\vspace{3mm}
+		\par Definición: Sea r(R) y s(S) donde
+		\begin{itemize}
+			\item $R = (A_{1}, \dotsc A_{m}, B_{1}, \dotsc B_{n})$
+			\item $S = (B_{1} \dotsc B_{n})$
+			\item $r \div s(R - S) \; y \; R - S = (A_{1}, \dotsc A_{m})$
+			\item $r \div s := \lbrace t \in \sqcap_{R-S}(r) \; | \; \forall u \in s (t.u \in r) \rbrace$
+		\end{itemize}
+
+		\begin{figure}[htb]
+				\centering
+				\includegraphics[width=5cm, height=3cm]{./imagenes/div1.png}
+				\caption{Relaciones \textit{r} y \textit{s}}
+				\vspace{5mm}
+				\includegraphics[width=3cm, height=3cm]{./imagenes/div2.png}
+				\caption{$r \; x \; s$}
+		\end{figure}
+		
+		\par Sea $q = r \div s$ entonces q es la relación más grande que satisface $q \; x \; s \subseteq r$.
+
+		\vspace{5mm}
+		\underline{Ejemplo:}
+		\begin{itemize}
+			\item libro(título,ISBN,editorial,edición)
+			\item libroBib(numInv,ISBN,nombreBib)
+			\item biblioteca(nombreBib,calle,número)
+			\par Encontrar los títulos de los libros que están en todas las bibliotecas.
+		\end{itemize}
+ 
+		\par Proceso para hacer una consulta con división:
+		\begin{enumerate}
+			\item Identificar tablas a usar
+			\item Reescribir consulta en español de modo que quede más claro dónde se usa división y la división sea más evidente.
+			\item Identificar partes de la división
+			\begin{itemize}
+				\item Escribirlas primero en español
+				\item Luego pasarlas a AR
+			\end{itemize}
+			\item Usar proyecciones para que partes cumplan con esquemas exigidos por división.
+			\item Escribir división, chequearla usando la definición de división y corregirla
+			\item Hacer la consulta completa en AR que involucra división.
+		\end{enumerate}
 	
 	\section{Agregación}
-	
+		\par \textbf{Función de Agregación:} toma una colección de valores y retorna un valor simple como resultado. En AR se consideran las siguientes funciones de agregación: avg, min, max, sum, count.
+		\par Muchas veces ocurre que debemos eliminar múltipes occurrencias de un valor antes de computar una función de agregación. Si queremos eliminar duplicados usamos los mismos nombres de función, con la adición de \textit{distinct} al final.
+		\vspace{5mm}		
+		\par Operación de agregación en AR
+		\[\mathsf{G}_{F_{1}(A_{1}), F_{2}(A_{2}), \dotsc F_{n}(A_{n})}(E)\]
+		\begin{itemize}
+			\item E expresión de AR
+			\item Cada $F_{i}$ es una función de agregación
+			\item Cada $A_{i}$ es un nombre de atributo
+		\end{itemize}
+
+		\par \underline{Semántica:} el resultado tiene una tupla $(a_{1}, a_{2}, \dotsc a_{n})$ donde, para cada \textit{i}, $a_{i}$ es el resultado de aplicar la función de agregación $F_{i}$ al multiconjunto de valores del atributo $A_{i}$ en E.
+		\vspace{5mm}	
+		\par Otra operación de agregación en AR más compleja
+		\[ G_{1}, G_{2}, \dotsc G_{n} \; \mathsf{G}_{F_{1}(A_{1}), F_{2}(A_{2}), \dotsc F_{n}(A_{n})}(E)\]
+		\begin{itemize}
+			\item E expresión de AR
+			\item $G_{1}, G_{2}, \dotsc G_{n}$ lista de atributos en los cuales agrupar (puede ser vacío)
+			\item Cada $F_{i}$ es una función de agregación
+			\item Cada $A_{i}$ es un nombre de atributo
+		\end{itemize}
+		\par \underline{Semántica:}
+		\begin{itemize}
+			\item Las tuplas en el resultado de la expresión E se dividen en grupos tales que:
+			\begin{enumerate}
+				\item Todas las tuplas del grupo tienen los mismos valores para $G_{1}, G_{2}, \dotsc G_{n}$.
+				\item Las tuplas de grupos diferentes tienen valores diferentes para $G_{1}, G_{2}, \dotsc G_{n}$.
+			\end{enumerate}
+		\item Para cada grupo asociado a $(g_{1}, g_{2}, \dotsc g_{n})$ el resultado tiene una tupla $(g_{1}, g_{2}, \dotsc g_{n}, a_{1}, a_{2} \dotsc a_{m})$, donde, para cada \textit{i}, ai es el resultado de aplicar la función de agregación $F_{i}$ al multiconjunto de valores del atributo $A_{i}$ en el grupo asociado a $(g_{1}, g_{2}, \dotsc g_{n})$.
+		\end{itemize}
+		
+		\underline{Ejemplo:}
+		\begin{itemize}
+			\item bibliotecario(antiguedad,DNI)
+			\item trabajaEn(DNI,nombreBib)
+			\par Obtener el promedio de las antiguedades de los bibliotecarios que trabajan en cada biblioteca.
+		\end{itemize}
+
 	\section{Reuniones externas}
+		\par Sea r(R) y s(S), se quiere expresar información de casamiento de tuplas de \textit{r} y de \textit{s} y también información de tuplas de \textit{r-tuplas} de \textit{s} que no cazan con tuplas de la otra tabla. Esto no es posible mediante $r \bowtie s$ ya que solo informa para cada tupla de \textit{r} con que tuplas de \textit{s} caza.
+		\par Para resolver este problema se definen operadores especiales que son extensiones de la reunión natural que evitan pérdida de informaciones de tuplas que no cazan (ya sea en una o ambas de las tablas), para ello se computa la reunión natural y luego se agregan tuplas de una relación que no cazan con las tuplas en la otra relación. \textbf{Usa valores nulos}.
+		
+		\vspace{5mm}
+		\par \underline{Ejemplo:}
+		\begin{figure}[htb]
+				\centering
+				\includegraphics[width=6cm, height=2cm]{./imagenes/re1.png}
+				\caption{Relación Instructor}
+				\vspace{5mm}
+				\includegraphics[width=4cm, height=2cm]{./imagenes/re2.png}
+				\caption{Relación Teaches}
+		\end{figure}
+		\begin{itemize}
+			\item Reunión natural
+			\begin{figure}[htb]
+				\centering
+				\includegraphics[width=9cm, height=2cm]{./imagenes/nj.png}
+				\caption{Instructor $\bowtie$ Teaches}
+			\end{figure}
+			\item Reunión externa a la izquierda
+			\begin{figure}[htb]
+				\centering
+				\includegraphics[width=9cm, height=2cm]{./imagenes/izquierda.png}
+				\caption{Instructor $\bowtie$ Teaches}
+			\end{figure}
+			\item Reunión externa a la derecha
+			\begin{figure}[htb]
+				\centering
+				\includegraphics[width=9cm, height=2cm]{./imagenes/derecha.png}
+				\caption{Instructor $\bowtie$ Teaches}
+			\end{figure}
+			\item Reunión externa full
+			\begin{figure}[htb]
+				\centering
+				\includegraphics[width=9cm, height=2cm]{./imagenes/full.png}
+				\caption{Instructor $\bowtie$ Teaches}
+			\end{figure}
+		\end{itemize}
+		
+		\par Las reuniones externas pueden ser expresadas usando operadores básicos, por ejemplo $r \bowtie s$ puede escribirse como:
+		\[ (r \bowtie) \cup (r - \sqcap_{R}(r \bowtie s)) \; x \; \lbrace null, null \dotsc null 	 \rbrace\]
 	
 	\section{Manejo de valores nulos}
-	
+		\par El resultado de una expresión aritmética involucrando null es null. Las funciones de agregación ignoran valores nulos (decisión arbitraria). Para eliminación de duplicados y agrupamientos a null se lo trata como a cualquier otro valor.
+		\par Comparaciones (como $\geq, \leq , =, >, \neq$) con valores null retorna el valor de verdad unknown. Las comparaciones que incluyan nulos pueden aparecer dentro de expresiones booleanas con conectivos.
+		\par Una lógica de tres valores de verdad se usa con el valor de verdad unknown.
+		\begin{itemize}
+			\item OR: (unknown or true) $=$ true,
+			\par (unknown or false) $=$ unknown,
+			\par (unknown or unknown) $=$ unknown
+			\item AND: (true and unknown) $=$ unknown, 
+			\par (false and unknown) $=$ false, 
+			\par (unknown and unknown) $=$ unknown
+			\item NOT: (not unknown) $=$ unknown
+		\end{itemize}
+
+		\begin{itemize}
+			\item \textbf{Selección:} evalúa el predicado P en $\sigma_{P}(E)$ sobre cada tupla de E. Si P(t) devuelve el valor cierto, se añade \textit{t} al resultado, caso contrario, si P(t) devuelve desconocido o falso, \textit{t} no se añade al resultado.
+			\item \textbf{Reunión natural} $r \bowtie s$: si dos tuplas $t_{r} \in r \; y \; t_{s} \in s$, tienen un valor nulo en un atributo común, entonces las tuplas no casan.
+			\item \textbf{Proyección:} trata los nulos como cualquier otro valor al eliminar duplicados.
+			\item \textbf{Unión, intersección y diferencia:} tratan las tuplas que tienen los mismos valores en todos los campos como duplicados incluso si algunos de los campos tienen valores nulos en ambas tuplas.
+			\item \textbf{Agregación:} Cuando hay valores nulos en los atributos agregados, la función de agregación a ser aplicada borra los valores nulos antes de aplicarse. Si el multiconjunto resultante está vacío, el resultado de la función de agregación es null.
+		\end{itemize}
+
 	\section{Asignación}
-	
+		\par La asignación ($\leftarrow$) provee una manera de expresar consultas complejas. También sirve para expresar alteraciones a la BD.
+		\par Escribir la consulta como un programa secuencial consistente de:
+		\begin{enumerate}
+			\item una serie de asignaciones
+			\item una expresión cuyo valor se muestra como resultado de la consulta
+		\end{enumerate}
+		\par La asignación se hace sobre una variable relacional temporal, es decir, su valor es una tabla.
+		
+		\par \underline{Ejemplo:}
+		\begin{itemize}
+			\item persona(DNI, nombre,apellido)
+			\item biblioteca(nombreBib,calle,número)
+			\item bibliotecario(antiguedad,DNI)
+			\item trabajaEn(DNI,nombreBib)
+			\par Dar las bibliotecas en las que trabajan los bibliotecarios de apellido Pérez.
+			\begin{itemize}
+				\item $r \leftarrow \sigma_{apellido="Perez"} (persona \bowtie bibliotecario)$
+				\item $s \leftarrow \sqcap_{antiguedad, DNI} (r)$
+				\item $ \sqcap_{nombreBib} (s \bowtie trabajaEn)$
+			\end{itemize}
+		\end{itemize}
 		
 \end{document}

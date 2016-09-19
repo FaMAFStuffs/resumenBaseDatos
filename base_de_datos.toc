@@ -35,14 +35,17 @@
 \contentsline {subsubsection}{Idea G3:}{13}
 \contentsline {chapter}{\numberline {2}Algebra Relacional}{15}
 \contentsline {section}{\numberline {2.1}Selecci\IeC {\'o}n}{15}
-\contentsline {section}{\numberline {2.2}Proyecci\IeC {\'o}n}{15}
+\contentsline {section}{\numberline {2.2}Proyecci\IeC {\'o}n}{16}
 \contentsline {section}{\numberline {2.3}Proyecci\IeC {\'o}n generalizada}{16}
 \contentsline {section}{\numberline {2.4}Uni\IeC {\'o}n, diferencia e intersecci\IeC {\'o}n}{17}
 \contentsline {section}{\numberline {2.5}Producto cartesiano}{17}
-\contentsline {section}{\numberline {2.6}Renombramiento}{17}
-\contentsline {section}{\numberline {2.7}Reuni\IeC {\'o}n natural}{17}
-\contentsline {section}{\numberline {2.8}Divisi\IeC {\'o}n}{17}
-\contentsline {section}{\numberline {2.9}Agregaci\IeC {\'o}n}{17}
-\contentsline {section}{\numberline {2.10}Reuniones externas}{17}
-\contentsline {section}{\numberline {2.11}Manejo de valores nulos}{17}
-\contentsline {section}{\numberline {2.12}Asignaci\IeC {\'o}n}{17}
+\contentsline {section}{\numberline {2.6}Renombramiento}{18}
+\contentsline {subsubsection}{\IeC {\textquestiondown }C\IeC {\'o}mo dar nombres de atributo a columnas de tabla asociada a expresi\IeC {\'o}n de consulta de AR?}{18}
+\contentsline {section}{\numberline {2.7}Definici\IeC {\'o}n del AR}{19}
+\contentsline {section}{\numberline {2.8}V\IeC {\'\i }nculo de AR con SQL}{19}
+\contentsline {section}{\numberline {2.9}Reuni\IeC {\'o}n natural}{19}
+\contentsline {section}{\numberline {2.10}Divisi\IeC {\'o}n}{21}
+\contentsline {section}{\numberline {2.11}Agregaci\IeC {\'o}n}{22}
+\contentsline {section}{\numberline {2.12}Reuniones externas}{23}
+\contentsline {section}{\numberline {2.13}Manejo de valores nulos}{24}
+\contentsline {section}{\numberline {2.14}Asignaci\IeC {\'o}n}{25}

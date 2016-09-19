@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.22)  19 SEP 2016 01:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.22)  19 SEP 2016 12:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -751,57 +751,163 @@ File: ./imagenes/seleccion1.png Graphic file (type png)
 
 <use ./imagenes/seleccion1.png>
 Package pdftex.def Info: ./imagenes/seleccion1.png used on input line 357.
-(pdftex.def)             Requested size: 113.81245pt x 56.90556pt.
+(pdftex.def)             Requested size: 85.3585pt x 85.3565pt.
 
 <./imagenes/seleccion2.png, id=82, 205.76875pt x 144.54pt>
 File: ./imagenes/seleccion2.png Graphic file (type png)
 
 <use ./imagenes/seleccion2.png>
-Package pdftex.def Info: ./imagenes/seleccion2.png used on input line 359.
+Package pdftex.def Info: ./imagenes/seleccion2.png used on input line 360.
 (pdftex.def)             Requested size: 85.3579pt x 56.90408pt.
-
-<./imagenes/proyeccion1.png, id=83, 141.52875pt x 206.7725pt>
-File: ./imagenes/proyeccion1.png Graphic file (type png)
-
-<use ./imagenes/proyeccion1.png>
-Package pdftex.def Info: ./imagenes/proyeccion1.png used on input line 373.
-(pdftex.def)             Requested size: 113.81487pt x 56.9052pt.
-
-<./imagenes/proyeccion2.png, id=84, 278.03876pt x 206.7725pt>
-File: ./imagenes/proyeccion2.png Graphic file (type png)
-
-<use ./imagenes/proyeccion2.png>
-Package pdftex.def Info: ./imagenes/proyeccion2.png used on input line 375.
-(pdftex.def)             Requested size: 85.35957pt x 56.9052pt.
  [15
 
 ]
+<./imagenes/proyeccion1.png, id=86, 141.52875pt x 206.7725pt>
 File: ./imagenes/proyeccion1.png Graphic file (type png)
- <use ./imagenes/proyeccion1.png>
-Package pdftex.def Info: ./imagenes/proyeccion1.png used on input line 389.
-(pdftex.def)             Requested size: 113.81487pt x 56.9052pt.
+
+<use ./imagenes/proyeccion1.png>
+Package pdftex.def Info: ./imagenes/proyeccion1.png used on input line 376.
+(pdftex.def)             Requested size: 71.13347pt x 85.3578pt.
+
+<./imagenes/proyeccion2.png, id=87, 278.03876pt x 206.7725pt>
 File: ./imagenes/proyeccion2.png Graphic file (type png)
 
 <use ./imagenes/proyeccion2.png>
-Package pdftex.def Info: ./imagenes/proyeccion2.png used on input line 391.
+Package pdftex.def Info: ./imagenes/proyeccion2.png used on input line 379.
 (pdftex.def)             Requested size: 85.35957pt x 56.9052pt.
  [16 <./imagenes/seleccion1.png> <./imagenes/seleccion2.png> <./imagenes/proyec
 cion1.png> <./imagenes/proyeccion2.png>]
-[17] (./base_de_datos.aux
+File: ./imagenes/proyeccion1.png Graphic file (type png)
+
+<use ./imagenes/proyeccion1.png>
+Package pdftex.def Info: ./imagenes/proyeccion1.png used on input line 394.
+(pdftex.def)             Requested size: 56.90419pt x 56.9052pt.
+File: ./imagenes/proyeccion2.png Graphic file (type png)
+ <use ./imagenes/proyeccion2.png>
+Package pdftex.def Info: ./imagenes/proyeccion2.png used on input line 397.
+(pdftex.def)             Requested size: 85.35957pt x 56.9052pt.
+
+Overfull \hbox (300.89442pt too wide) detected at line 428
+\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 instructor:ID; instructor:name; instructor:de
+pt[]name; instructor:salary; teaches:ID; teaches:course[]id; teaches:sec[]id; t
+eaches:semester; teaches:year\OT1/lmr/m/n/12 )
+ []
+
+<./imagenes/pc1.png, id=98, 266.9975pt x 195.73125pt>
+File: ./imagenes/pc1.png Graphic file (type png)
+ <use ./imagenes/pc1.png>
+Package pdftex.def Info: ./imagenes/pc1.png used on input line 437.
+(pdftex.def)             Requested size: 113.8126pt x 85.35744pt.
+
+<./imagenes/pc2.png, id=99, 195.73125pt x 292.09125pt>
+File: ./imagenes/pc2.png Graphic file (type png)
+
+<use ./imagenes/pc2.png>
+Package pdftex.def Info: ./imagenes/pc2.png used on input line 440.
+(pdftex.def)             Requested size: 113.81091pt x 142.26576pt.
+ [17] [18 <./imagenes/pc1.png> <./imagenes/pc2.png>]
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 499.
+
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 501.
+
+[19] <./imagenes/nj1.png, id=112, 390.45876pt x 224.84pt>
+File: ./imagenes/nj1.png Graphic file (type png)
+
+<use ./imagenes/nj1.png>
+Package pdftex.def Info: ./imagenes/nj1.png used on input line 513.
+(pdftex.def)             Requested size: 142.26305pt x 85.35774pt.
+
+<./imagenes/nj2.png, id=113, 185.69376pt x 195.73125pt>
+File: ./imagenes/nj2.png Graphic file (type png)
+
+<use ./imagenes/nj2.png>
+Package pdftex.def Info: ./imagenes/nj2.png used on input line 516.
+(pdftex.def)             Requested size: 85.36066pt x 85.35744pt.
+ [20 <./imagenes/nj1.png> <./imagenes/nj2.png>]
+<./imagenes/div1.png, id=119, 389.455pt x 283.0575pt>
+File: ./imagenes/div1.png Graphic file (type png)
+
+<use ./imagenes/div1.png>
+Package pdftex.def Info: ./imagenes/div1.png used on input line 562.
+(pdftex.def)             Requested size: 142.25983pt x 85.35844pt.
+ <./imagenes/div2.png, id=120, 128.48pt x 116.435pt>
+File: ./imagenes/div2.png Graphic file (type png)
+
+<use ./imagenes/div2.png>
+Package pdftex.def Info: ./imagenes/div2.png used on input line 565.
+(pdftex.def)             Requested size: 85.3597pt x 85.36104pt.
+ [21 <./imagenes/div1.png> <./imagenes/div2.png>]
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 599
+.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (29.58444pt too wide) in paragraph at lines 623--624
+[]\OT1/lmr/m/n/12 Para ca-da gru-po aso-cia-do a $(\OML/lmm/m/it/12 g[]; g[]; [
+] g[]\OT1/lmr/m/n/12 )$ el re-sul-ta-do tie-ne una tu-pla $(\OML/lmm/m/it/12 g[
+]; g[]; [] g[]; a[]; a[] [] a[]\OT1/lmr/m/n/12 )$,
+ []
+
+[22] <./imagenes/re1.png, id=130, 400.49625pt x 125.46875pt>
+File: ./imagenes/re1.png Graphic file (type png)
+
+<use ./imagenes/re1.png>
+Package pdftex.def Info: ./imagenes/re1.png used on input line 641.
+(pdftex.def)             Requested size: 170.71892pt x 56.90648pt.
+
+<./imagenes/re2.png, id=131, 310.15875pt x 125.46875pt>
+File: ./imagenes/re2.png Graphic file (type png)
+
+<use ./imagenes/re2.png>
+Package pdftex.def Info: ./imagenes/re2.png used on input line 644.
+(pdftex.def)             Requested size: 113.81041pt x 56.90648pt.
+ <./imagenes/nj.png, id=132, 517.935pt x 105.39375pt>
+File: ./imagenes/nj.png Graphic file (type png)
+
+<use ./imagenes/nj.png>
+Package pdftex.def Info: ./imagenes/nj.png used on input line 651.
+(pdftex.def)             Requested size: 256.08224pt x 56.90694pt.
+
+<./imagenes/izquierda.png, id=133, 516.93124pt x 122.4575pt>
+File: ./imagenes/izquierda.png Graphic file (type png)
+
+<use ./imagenes/izquierda.png>
+Package pdftex.def Info: ./imagenes/izquierda.png used on input line 657.
+(pdftex.def)             Requested size: 256.08289pt x 56.90477pt.
+
+<./imagenes/derecha.png, id=134, 517.935pt x 126.4725pt>
+File: ./imagenes/derecha.png Graphic file (type png)
+
+<use ./imagenes/derecha.png>
+Package pdftex.def Info: ./imagenes/derecha.png used on input line 663.
+(pdftex.def)             Requested size: 256.08224pt x 56.9063pt.
+
+<./imagenes/full.png, id=135, 520.94624pt x 150.5625pt>
+File: ./imagenes/full.png Graphic file (type png)
+
+<use ./imagenes/full.png>
+Package pdftex.def Info: ./imagenes/full.png used on input line 669.
+(pdftex.def)             Requested size: 256.07669pt x 56.90648pt.
+ [23 <./imagenes/re1.png> <./imagenes/re2.png> <./imagenes/nj.png>] [24 <./imag
+enes/izquierda.png> <./imagenes/derecha.png> <./imagenes/full.png>] [25] (./bas
+e_de_datos.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 4611 strings out of 493089
- 63054 string characters out of 6134842
+ 4722 strings out of 493089
+ 65237 string characters out of 6134842
  138889 words of memory out of 5000000
- 7970 multiletter control sequences out of 15000+600000
- 53496 words of font info for 55 fonts, out of 8000000 for 9000
+ 8064 multiletter control sequences out of 15000+600000
+ 61668 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,8n,30p,596b,405s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/l
-ocal/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texli
-ve/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2015/texmf-
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local
+/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2
+015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/public/lm/lmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
 lic/lm/lmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi
@@ -810,12 +916,12 @@ lic/lm/lmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi
 ive/2015/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/public/lm/lmri12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
-blic/lm/lmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lm
-sy8.pfb>
-Output written on base_de_datos.pdf (18 pages, 2953798 bytes).
+blic/lm/lmss12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lm
+sy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on base_de_datos.pdf (26 pages, 3634896 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 194 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 
