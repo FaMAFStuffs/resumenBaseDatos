@@ -119,7 +119,7 @@
 				\item Si el CR es varios – varios: si en al menos un CE hay atributos que no son de clave primaria, entonces ocurre igual que antes, los atributos del CE que no son de clave primaria dan lugar a redundancia de información si se usa la opción CE. Por lo que conviene usar CR en lugar de CE.
 			\end{itemize}
 		
-		\subsection{CR de grado > 2 vs CR binarias}
+		\subsection{CR de grado $\textless$ 2 vs CR binarias}
 			\par A veces tenemos las alternativas de modelar una situación como un CR de grado > 2 o como varios CR binarios. Si con los CR binarios puedo capturar los datos del CR de grado > 2 y puedo expresar más restricciones de integridad que con el CR de grado > 2, entonces usar los CR binarios.
 		
 		\subsection{CE débiles vs Atributo multivalorado compuesto}
@@ -335,5 +335,91 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 
 			
 \chapter{Algebra Relacional}
+		\par Un lenguaje de consultas es un lenguaje en el que un usuario solicita información de la base de datos. Estos lenguajes suelen ser de un nivel superior que el de los lenguajes de programación habituales.
+		\par En los lenguajes procedimentales el usuario instruye al sistema para que lleve a cabo una serie de operaciones en la base de datos para calcular el resultado deseado. Por ejemplo, \textbf{álgebra relacional}. Otros lenguajes de consulta a estudiar: SQL (en modelo relacional), XPath y XQuery (en XML).
+		\par El AR consiste de un conjunto de operadores sobre relaciones que se pueden componer. Se parte de las relaciones de la BD, a esas relaciones se les aplican operadores del AR.
+	
+	\section{Selección}
+		\par El operador \textbf{selección} sirve para definir por comprensión subconjuntos de una relación. Se usa la sintaxis $\sigma_{p}(r)$ , donde
+		\[\sigma_{p}(r) := {t \in r | p(t)} \]
+		\par Donde p es predicado de selección.
+			\begin{itemize}
+				\item p consistente de términos conectados por conectivos proposicionales $\{ \land, \lor, \neg \}$
+				\item Una relación de comparación \textit{rc} satisface: rc $\in \{=, \textless, >, \neq, \geq, \leq \}$ 
+				\item Dada una \textit{rc}, un \textbf{término} se forma de la siguiente manera:
+				\[ \langle atributo \rangle \; rc \; \langle atributo \rangle,\]
+				\[ \langle atributo \rangle \; rc \; \langle constante \rangle,\]
+				\[ \langle constante \rangle \; rc \; \langle atributo \rangle,\]
+			\end{itemize}
+
+			\begin{figure}[htb]
+				\centering
+				\includegraphics[width=4cm, height=2cm]{./imagenes/seleccion1.png}
+				\caption{Relación \textit{r}}
+				\includegraphics[width=3cm, height=2cm]{./imagenes/seleccion2.png}
+				\caption{$\sigma_{A=B \; \land \; D > 5}(r)$}
+			\end{figure}
+
+	\section{Proyección}
+		\par \textbf{Notación:} $\sqcap_{A_{1}, A_{2} \dotsc A_{k}}(r)$
+		\par \textbf{Semántica:}
+		\begin{itemize}
+			\item relación de k columnas obtenida de borrar columnas que no son listadas
+			\item se borran filas duplicadas del resultado
+		\end{itemize}
+		
+		\begin{figure}[htb]
+				\centering
+				\includegraphics[width=4cm, height=2cm]{./imagenes/proyeccion1.png}
+				\caption{Relación \textit{r}}
+				\includegraphics[width=3cm, height=2cm]{./imagenes/proyeccion2.png}
+				\caption{$\sqcap_{A, C}(r)$}
+		\end{figure}
+	
+	\section{Proyección generalizada}
+		\par \textbf{Notación:} $\sqcap_{F_{1}, F_{2} \dotsc F_{n}}(E)$
+		\par Donde los $F_{1}, F_{2} \dotsc F_{n}$ son expresiones aritméticas involucrando constantes y atributos de E. Puedo permutar orden de atributos de \textit{r}.
+		
+		\par \underline{Ejemplo:} obtener el salario mensual de un instructor
+		\begin{center} instructor(ID, name, dept name, salary) \\ salary: es salario anual \end{center}
+		\[\sqcap_{ID, name, dept_name, salary \div 12} \; (instructor)\]
+
+		\begin{figure}[htb]
+				\centering
+				\includegraphics[width=4cm, height=2cm]{./imagenes/proyeccion1.png}
+				\caption{Relación \textit{r}}
+				\includegraphics[width=3cm, height=2cm]{./imagenes/proyeccion2.png}
+				\caption{$\sqcap_{A=B \; \land \; D > 5}(r)$}
+		\end{figure}
+	
+	\section{Unión, diferencia e intersección}
+		\par Operaciones de conjuntos del mismo nombre.
+		\begin{itemize}
+			\item $r \cup s = \lbrace t \; | \; t \in r \lor t \in s \rbrace$
+			\item $r - s = \lbrace t \; | \; t \in r \land t \notin s \rbrace$
+			\item $r \cap s = \lbrace t \; | \; t \in r \land t \in s \rbrace$
+		\end{itemize}
+		\par Condiciones para que estas operaciones tengan sentido.
+		\begin{enumerate}
+			\item Ambas relaciones deben tener el mismo número de atributos
+			\item Los dominios de atributos de la misma posición deben ser iguales.
+		\end{enumerate}
+
+	\section{Producto cartesiano}
+	
+	\section{Renombramiento}
+
+	\section{Reunión natural}
+	
+	\section{División}
+	
+	\section{Agregación}
+	
+	\section{Reuniones externas}
+	
+	\section{Manejo de valores nulos}
+	
+	\section{Asignación}
+	
 		
 \end{document}
