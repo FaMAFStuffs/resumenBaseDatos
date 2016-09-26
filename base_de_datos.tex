@@ -28,13 +28,13 @@
 		\begin{itemize}
 			\item Una \textbf{entidad} es un objeto que existe y es distinguible de los otros objetos. Las entidades tienen atributos.
 			\par \underline{Ejemplo:} una persona tiene nombres y direcciones.
-			\item Un \textbf{conjunto de entidades} es un conjunto de entidades del mismo tipo (i.e. Con los mismos atributos) que comparte las mismas propiedades.
+			\item Un \textbf{conjunto de entidades} es un conjunto de entidades del mismo tipo (i.e. con los mismos atributos) que comparte las mismas propiedades.
 			\par \underline{Ejemplo:} conjunto de todas las personas con los atributos del ejemplo anterior.
 			\item Un \textbf{dominio} es el conjunto de valores permitidos para cada atributo. 
 			
 			\item Tipos de atributos:
 				\begin{itemize}
-					\item Atributos Simples y compuestos.
+					\item Atributos simples y compuestos.
 					\item Atributos uni-valorados y multi-valorados
 					\item Atributos derivados, pueden computarse de otros atributos.
 				\end{itemize}
@@ -44,20 +44,21 @@
 			\begin{figure}[htb]
 				\centering
 				\includegraphics[width=6cm, height=4cm]{./imagenes/entidad.png}
-				\caption{Entidad de nombre E, Atributo simple A1, Atributo compuesto A2, Atributo multivalorado A3, Atributo derivado A4, Clave primaria A1}
+				\caption{Entidad de nombre E, Atributo simple A1, Atributo compuesto A2, Atributo multivalorado A3, Atributo derivado A4, Clave primaria A1.}
 			\end{figure}
 
 	\section{Claves}
 		\begin{itemize}
 			\item Una \textbf{superclave} de un CE es un conjunto de uno o más atributos cuyos valores unívocamente determinan cada entidad.
-			\item Una \textbf{clave candidata} de un CE es una superclave minimal (i.e. si se quita atributo dejamos de tener superclave).
+			\item Una \textbf{clave candidata} de un CE es una superclave minimal (i.e. si se quita atributo dejamos de tener superclave, por lo general los ID).
 			\item Una \textbf{clave primaria} es aquella seleccionada de entre todas las claves candidatas que puedan existir.
 		\end{itemize}
 		
 	\section{Correspondencia de cardinales}
+		\par Sea R un conjunto de relaciones de conjunto de entindades E1 a conjunto de entidades E2.
 		\begin{itemize}
-			\item \textbf{Conjuntos de relaciones uno-uno:} una entidad de \textbf{E1} está asociada con a lo más una entidad de \textbf{E2} vía una relación \textbf{R}. Una entidad de \textbf{E2} está asociada con a lo más una entidad de \textbf{E1} vía \textbf{R}.
-			\item \textbf{Conjuntos de relaciones uno-varios / varios-uno:} una entidad de \textbf{E1} está asociada con ninguna o varias entidades de \textbf{E2} vía una relación \textbf{R}. Una entidad de \textbf{E2} está asociada con a lo más una entidad de \textbf{E1} vía \textbf{R}.
+			\item \textbf{Conjuntos de relaciones uno-uno:} una entidad de \textbf{E1} está asociada con a lo más una entidad de \textbf{E2} vía la relación \textbf{R}. Una entidad de \textbf{E2} está asociada con a lo más una entidad de \textbf{E1} vía \textbf{R}.
+			\item \textbf{Conjuntos de relaciones uno-varios / varios-uno:} una entidad de \textbf{E1} está asociada con ninguna o varias entidades de \textbf{E2} vía la relación \textbf{R}. Una entidad de \textbf{E2} está asociada con a lo más una entidad de \textbf{E1} vía \textbf{R}.
 			\item \textbf{Conjuntos de relaciones varios-varios:} una entidad de \textbf{E1} está asociada con ninguna o varias entidades de \textbf{E2} vía \textbf{R}. Una entidad de \textbf{E2} está asociada con a lo más una entidad de \textbf{E1} vía \textbf{R}.
 		\end{itemize}
 		
@@ -74,9 +75,9 @@
 		\end{itemize}
 		
 	\section{Conjunto de entidades débiles}
-		Un CE que no tiene una clave primaria en el conjunto de sus atributos, se llama \textbf{conjunto de entidades débiles}. La existencia de un CE débiles depende de la existencia de un CE fuertes llamado \textbf{CE identificador}. 
+		Un CE que no tiene una clave primaria en el conjunto de sus atributos, se llama \textbf{conjunto de entidades débiles}. La existencia de un CE débiles depende de la existencia de un CE fuertes llamado \textbf{CE identificador}. 		
 		\vspace{5mm}
-		\par \underline{Ejemplo:} ¿En el caso de libro-biblioteca cuál sería el CE identificador?
+		\par \underline{Ejemplo:} ¿En el caso de un libro, con solo su número de inventario como atributo, y una biblioteca cuál sería el CE identificador?
 		\vspace{2.5mm}
 		\par Hay un CR varios-uno entre CE débil y CE identificador, donde el CE débil tiene participación total, a este CR se le llama \textbf{CR de identificación}. El mismo se representa con un diamante doble.
 		\par El \textbf{discriminador} de un CE débiles es un conjunto de atributos que permite distinguir entre todas las entidades de un CE débiles asociadas a la misma entidad fuerte. 
@@ -84,9 +85,9 @@
 		
 	\section{Diseño de una DB de calidad}
 		\subsection{Eliminacion de información redundante}
-			Una vez que se han decidido los CE del problema y los atributos de los CE se pasa a definir los CR, esos CR pueden señalar que algunos atributos en CEs son redundantes y por lo tanto necesitan ser removidos.
-			
-			\underline{Ejemplo:}
+			Una vez que se han decidido los CE del problema y los atributos de los CE se pasa a definir los CR, esos CR pueden señalar que algunos atributos en CE son redundantes y por lo tanto necesitan ser removidos.
+			\vspace{5mm}
+			\par \underline{Ejemplo:}
 			\begin{itemize}
 				\item CE \textbf{aula} con atributos (edificio, número y capacidad)
 				\item CE \textbf{sección} con atributos (idCurso, idSec, semestre, año, edificio, número)
@@ -115,12 +116,12 @@
 		\subsection{Uso de CEs vs uso de CR}
 			\par Muchas veces son posibles dos alternativas para modelar un asunto, como un CE o como un CR.
 			\begin{itemize}
-				\item Si CR es uno-varios o varios-uno: si hay atributos, no de clave primaria en el CE A, entonces los atributos de A que no son de clave primaria dan lugar a redundancia de información si se usa alternativa CE. Por lo que conviene usar la opción CR en lugar de CE.
-				\item Si el CR es varios – varios: si en al menos un CE hay atributos que no son de clave primaria, entonces ocurre igual que antes, los atributos del CE que no son de clave primaria dan lugar a redundancia de información si se usa la opción CE. Por lo que conviene usar CR en lugar de CE.
+				\item Si CR es \textbf{uno-varios} o \textbf{varios-uno}: si hay atributos, no de clave primaria en el CE A, entonces los atributos de A que no son de clave primaria dan lugar a redundancia de información si se usa alternativa CE. Por lo que conviene usar la opción CR en lugar de CE.
+				\item Si el CR es \textbf{varios – varios}: si en al menos un CE hay atributos que no son de clave primaria, entonces ocurre igual que antes, los atributos del CE que no son de clave primaria dan lugar a redundancia de información si se usa la opción CE. Por lo que conviene usar CR en lugar de CE.
 			\end{itemize}
 		
-		\subsection{CR de grado $\textless$ 2 vs CR binarias}
-			\par A veces tenemos las alternativas de modelar una situación como un CR de grado > 2 o como varios CR binarios. Si con los CR binarios puedo capturar los datos del CR de grado > 2 y puedo expresar más restricciones de integridad que con el CR de grado > 2, entonces usar los CR binarios.
+		\subsection{CR de grado $>$ 2 vs CR binarias}
+			\par A veces tenemos las alternativas de modelar una situación como un CR de grado $>$ 2 o como varios CR binarios. Si con los CR binarios puedo capturar los datos del CR de grado $>$ 2 y puedo expresar más restricciones de integridad que con el CR de grado $>$ 2, entonces usar los CR binarios.
 		
 		\subsection{CE débiles vs Atributo multivalorado compuesto}
 			\par A veces para modelar una situación tenemos dos alternativas un CE débiles o un atributo multi-valorado compuesto. Si el objeto contemplado tiene su complejidad e involucra varios atributos y es de suma importancia para la organización, es poco conveniente tenerla como un atributo de un CE fuerte, por lo tanto, conviene modelarlo como un CE débiles.
@@ -128,29 +129,34 @@
 		
 	\section{Especialización - Generalización}
 		Cuando en un diseño ER hay varios CE que son bastante similares en el sentido que comparten varios atributos en común, que tienen las mismas claves primarias y que participan en los mismos CR, aparecen problemas de repetición.		
-		\par Esto es malo ya que estos modelos ocupan demasiado espacio. Muchos CR hacen el diagrama más intrincado, esto se ve agravado cuando el esquema de la BD tiene muchos CE y CR. Al cambiar un CE o CR muchas veces hay que propagar el cambio a otros CE o CRs.
+		\par Esto es malo ya que estos modelos ocupan demasiado espacio. Muchos CR hacen el diagrama más intrincado, esto se ve agravado cuando el esquema de la BD tiene muchos CE y CR. Al cambiar un CE o CR muchas veces hay que propagar el cambio a otros CE o CR.
 		
+		\vspace{5mm}
 		\par La solución a este problema es utilizar especialización-generalización.
 		\begin{itemize}
 			\item \textbf{Especialización:} hace referencia a un proceso de diseño \textit{top-down} donde designamos subgrupos dentro de un CE que son distintivos de otras entidades en el CE. Estos subgrupos son CE de más bajo nivel que tienen atributos específicos o participan de CR que no aplican al CE de más alto nivel. Una especialización se denota con un triángulo etiquetado ISA. La relación ISA se llama también relación de superclase – subclase.
+			
+			\begin{center}
+				\includegraphics[width=9cm, height=9cm]{./imagenes/especializacion.png}
+			\end{center}
+		
 			\item \textbf{Herencia de atributos:} un CE de más bajo nivel hereda:
 				\begin{itemize}
 					\item todos los atributos
 					\item la clave primaria
-					\item participaciones en CR del CE de más alto nivel con el cual está relacionado. 
+					\item participaciones en CR  
 				\end{itemize}
-			\item \textbf{Generalización:} hace referencia a un proceso de diseño \textit{bottom up} que generaliza unos cuantos CE que comparten las mismas propiedades en un CE de más alto nivel.
+				\par del CE de más alto nivel con el cual está relacionado.
+			\item \textbf{Generalización:} hace referencia a un proceso de diseño \textit{bottom-up} que generaliza unos cuantos CE que comparten las mismas propiedades en un CE de más alto nivel.
 			
-			\vspace{7mm}
-			\textbf{Restricciones de integridad:}
+			\item \textbf{Restricciones de integridad:}
            \par Para indicar si una entidad pertenece o no a más de un CE de nivel más bajo dentro de la generalización.
          		\begin{itemize}
          			\item \underline{Disjunto:} una entidad puede pertenecer a solo un CE de nivel más bajo. Usar palabra reservada \textit{disj}.
 					\item \underline{Solapado:} una entidad puede pertenecer a más de un CE de nivel más bajo.
 				\end{itemize}         		  
-
-			\vspace{7mm}			
-			\textbf{Restricciones de completitud:} 
+		
+			\item \textbf{Restricciones de completitud:} 
 			\par Para indicar si una entidad en el CE de nivel más alto debe pertenecer a al menos uno de los CE de nivel más bajo en la generalización.
 				\begin{itemize}
 					\item \underline{Total:} una entidad debe pertenecer a un CE de nivel más bajo. Usar línea doble.
@@ -188,18 +194,17 @@
 	\section{DB relacionales}
 		\underline{Definiciones:}
 		\begin{itemize}
-			\item Un \textbf{esquema de una BD relacional} es un conjunto de esquemas de relación $R_{1}, R_{2} \dotsc R_{n}$
-R1,…,Rn
-			\item \textbf{Una base de datos relacional} consiste de múltiples relaciones $r_{1}(R_{1}), r_{n}(R_{2}) \dotsc r_{n}(R_{n})$
+			\item Un \textbf{esquema de una BD relacional} es un conjunto de esquemas de relación $R_{1}, R_{2} \dotsc R_{n}$.
+			\item \textbf{Una base de datos relacional} consiste de múltiples relaciones $r_{1}(R_{1}), r_{2}(R_{2}) \dotsc r_{n}(R_{n})$
 			\par Primero definimos los conceptos del problema mediante esquemas de relación, luego definimos los datos como tablas asociadas a esos esquemas, por último podemos poblar las tablas, consultarlas y alterarlas.
 			\item nombre de relación, expresado en minúscula, r, s, u, r1, r2, ….
 			\item nombre de esquema de relación, expresado en mayúscula R, S, U, R1, R2, …
-			\item sea t $\in$ r , r(R), A $\in$ R . t[A] es el valor de t en A.
-			\item ea t $\in$ r , r(R). t[i] es el valor de t en atributo i-ésimo de R.
+			\item sea t $\in$ r, r(R), A $\in$ R . t[A] es el valor de t en A.
+			\item ea t $\in$ r, r(R). t[i] es el valor de t en atributo i-ésimo de R.
 		\end{itemize}
 
 		\subsection{Superclaves}
-			\underline{Definición:} Sea K $\in$ R , R esquema de relación; K es una \textbf{superclave} de R si los valores para K son suficientes para identificar una tupla única en cada posible relación r(R). Observar que se habla de relaciones para el problema o situación del mundo real que está siendo considerando.
+			\underline{Definición:} Sea K $\subseteq$ R , R esquema de relación; K es una \textbf{superclave} de R si los valores para K son suficientes para identificar una tupla única en cada posible relación r(R). Observar que se habla de relaciones para el problema o situación del mundo real que está siendo considerando.
 		
 		\subsection{Claves candidatas y primarias}
 			\par Una superclave K es una \textbf{clave candidata} si K es minimal, es decir, para todo atributo de K si se lo quito dejo de tener una superclave.
@@ -208,11 +213,11 @@ R1,…,Rn
 			\par \underline{Notación:} Se indican los atributos de una clave primaria para un esquema de relación R subrayando los atributos de R que forman la clave primaria.
 
 		\subsection{Claves foráneas}
-			\par Sea $R_{1}$ una \textbf{relación referenciante} y $R_{2}$ una \textbf{relación referenciada}, entonces
+			\par Sea $R_{1}$ una \textbf{relación referenciante} y $R_{2}$ una \textbf{relación referenciada}, entonces:
 			\begin{itemize}
 				\item \underline{Restricción de clave foránea:} Los valores de uno o más atributos en una tupla de $R_{1}$ aparecen en uno o más atributos de una tupla en $R_{2}$.
-				\item Los atributos referenciados en $R_{1}$ suelen formar una clave primaria del esquema de $R_{2}$.
-				\item Los atributos referenciados de l$R_{1}$ suelen formar una clave candidata del esquema de $R_{2}$.
+				\item Los atributos referenciados en $R_{1}$ suelen formar una \textbf{clave primaria} del esquema de $R_{2}$.
+				\item Los atributos referenciados de $R_{1}$ suelen formar una \textbf{clave candidata }del esquema de $R_{2}$.
 				
 				\vspace{5mm}
 				\textbf{Representación gráfica:}
@@ -229,7 +234,7 @@ R1,…,Rn
 		\end{itemize}
 	
 	\section{Reducción a esquemas relacionales}
-		\par Se tiene un buen diseño de esquema de BD usando modelado-ER y se va a 
+		\par Se tiene un buen diseño de esquema de BD usando modelado-ER que se va a 
 traducir a un conjunto esquemas relacionales con claves primarias y restricciones de clave foránea. Hay reglas de traducción que suelen resolver un porcentaje alto del problema pero esas reglas no contemplan todos los casos.
 
 		\par Una propiedad de la traducción de diagramas ER a tablas que se debe respetar es que para cada CE y CR hay un esquema relacional único al cual se asigna el CE / CR.
@@ -269,7 +274,7 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 		\underline{\textbf{Decisión:}} Los atributos derivados no son explícitamente representados en el modelo de datos relacional. Se verá que si se los necesita una forma de computarlos es por medio de consultas.
 		
 		\subsection{Regla CR1}
-			\par Un CR \textbf{varios a varios} es representado con un esquema con atributos para las claves primarias de los dos CE participantes y todos los atributos descriptivos del CR (que no son multivalorados). La clave primaria del esquema del CR es la unión de las claves primarias de los CEs que participan en el CR. Para cada CE que participa en el CR se crea restricción de clave foránea que referencia clave primaria de CE.
+			\par Un CR \textbf{varios a varios} es representado con un esquema con atributos para las claves primarias de los dos CE participantes y todos los atributos descriptivos del CR (que no son multivalorados). La clave primaria del esquema del CR es la unión de las claves primarias de los CE que participan en el CR. Para cada CE que participa en el CR se crea restricción de clave foránea que referencia clave primaria de CE.
 
 			\begin{center}
 				\includegraphics[width=8cm, height=5cm]{./imagenes/cr1.png}
@@ -279,7 +284,7 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 			\par Un CR \textbf{varios a uno} o \textbf{uno a varios} que es total en el lado varios puede ser representado agregando atributos extra en el CE del lado varios, conteniendo la clave primaria del lado uno. La clave primaria del CR es la clave primaria del CE del lado varios. Se crea restricción de clave foránea de CR que referencia a clave primaria de CE de lado varios.
 
 			\begin{center}
-				\includegraphics[width=7cm, height=5cm]{./imagenes/cr2.png}
+				\includegraphics[width=9cm, height=5cm]{./imagenes/cr2.png}
 			\end{center}
 
 			\par Si la participación es parcial en el lado varios, aplicar la regla anterior puede resultar en valores nulos. Esto sucede cuando a una entidad del CE del lado varios no le corresponde ninguna entidad del CE del lado uno.
@@ -288,42 +293,42 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 			\par Un CR \textbf{uno a uno} puede ser mapeado agregando al esquema resultante de traducir uno de los CE participantes los atributos de la clave primaria del otro CE. La clave primaria de cualquier CE puede ser elegida como la clave primaria del CR. Se crea restricción de clave foránea de esquema relacional asociado al CR que referencia clave primaria de otro CE (el que no se tomo de base para hallar el esquema asociado al CR).
 
 			\begin{center}
-				\includegraphics[width=6cm, height=5cm]{./imagenes/cr3.png}
+				\includegraphics[width=8cm, height=5cm]{./imagenes/cr3.png}
 			\end{center}
 
 		\subsection{Regla CED}
 			\par Un CE débiles se mapea a una tabla que incluye columnas para la clave primaria del CE identificador más los atributos (no multi-valorados) del CE débiles (achatando jerarquías de atributos compuestos si es necesario). La clave primaria del CE identificador más el discriminador del CE débil forman la clave primaria del esquema relacional de la traducción. Para atributos de esquema de CE débil que provienen de CE identificadora se agrega restricción de clave foránea desde esquema de CE débil a CE identificador. El CR identificador no se mapea.
 
 			\begin{center}
-				\includegraphics[width=7cm, height=5cm]{./imagenes/ced.png}
+				\includegraphics[width=8cm, height=5cm]{./imagenes/ced.png}
 			\end{center}
 			
 		\subsection{Reducción de generalización}
 			\par Para traducir generalización iremos proponiendo y evaluando ideas de traducción. Al final decimos bajo qué circunstancias las ideas de traducción son reglas a usar.
 			
-			\subsubsection{Idea G1:} traducción de generalización a tablas.
+			\subsubsection{Idea G1:} Traducción de generalización a tablas.
 				\begin{itemize}
-					\item Formar una tabla para el CE de nivel más alto (la generalización)
+					\item Formar una tabla para el CE de nivel más alto (la generalización).
 					\item Formar una tabla para cada CE especialización que incluye la clave primaria del CE generalización y los atributos locales.
 				\end{itemize}
 
 				\begin{center}
-					\includegraphics[width=11cm, height=7cm]{./imagenes/g1.png}
+					\includegraphics[width=12cm, height=7cm]{./imagenes/g1.png}
 				\end{center}
 			
 				\underline{Evaluación de Idea G1:} obtener toda la información de CE de especialización requiere acceder a dos tablas.
 			
-			\subsubsection{Idea G2:} formar una tabla para cada CE especialización con los atributos locales y heredados del CE generalización.
+			\subsubsection{Idea G2:} Formar una tabla para cada CE especialización con los atributos locales y heredados del CE generalización.
 			
 				\begin{center}
-					\includegraphics[width=11cm, height=7cm]{./imagenes/g2.png}
+					\includegraphics[width=12cm, height=7cm]{./imagenes/g2.png}
 				\end{center}
 			
 				\underline{Evaluación de Idea G2:} si dos o más especializaciones contienen la misma entidad, entonces los atributos que no son clave primaria del CE generalización son almacenados redundantemente.
 				
 				\par Si la generalización es total con la traducción usando esta idea, la tabla del CE generalización no se requiere para almacenar información.
 			
-			\subsubsection{Idea G3:} si la generalización es total formar una tabla para cada CE especialización con los atributos locales y heredados; no formar tabla para la generalización. Esta idea es óptima para cuando la generalización es total y disjunta.
+			\subsubsection{Idea G3:} Si la generalización es total formar una tabla para cada CE especialización con los atributos locales y heredados; no formar tabla para la generalización. Esta idea es óptima para cuando la generalización es total y disjunta.
 
 			\vspace{7mm}
 			\textbf{En resumen:}
@@ -336,12 +341,12 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 			
 \chapter{Algebra Relacional}
 		\par Un lenguaje de consultas es un lenguaje en el que un usuario solicita información de la base de datos. Estos lenguajes suelen ser de un nivel superior que el de los lenguajes de programación habituales.
-		\par En los lenguajes procedimentales el usuario instruye al sistema para que lleve a cabo una serie de operaciones en la base de datos para calcular el resultado deseado. Por ejemplo, \textbf{álgebra relacional}. Otros lenguajes de consulta a estudiar: SQL (en modelo relacional), XPath y XQuery (en XML).
+		\par En los lenguajes procedimentales el usuario instruye al sistema para que lleve a cabo una serie de operaciones, en la base de datos para calcular el resultado deseado. Por ejemplo, \textbf{álgebra relacional}. Otros lenguajes de consulta a estudiar: SQL (en modelo relacional), XPath y XQuery (en XML).
 		\par El AR consiste de un conjunto de operadores sobre relaciones que se pueden componer. Se parte de las relaciones de la BD, a esas relaciones se les aplican operadores del AR.
 	
 	\section{Selección}
 		\par El operador \textbf{selección} sirve para definir por comprensión subconjuntos de una relación. Se usa la sintaxis $\sigma_{p}(r)$ , donde
-		\[\sigma_{p}(r) := {t \in r | p(t)} \]
+		\[\sigma_{p}(r) := \lbrace t \in r \; | \; p(t) \rbrace \]
 		\par Donde p es predicado de selección.
 			\begin{itemize}
 				\item p consistente de términos conectados por conectivos proposicionales $\{ \land, \lor, \neg \}$
@@ -357,7 +362,7 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 				\includegraphics[width=3cm, height=3cm]{./imagenes/seleccion1.png}
 				\caption{Relación \textit{r}}
 				\vspace{5mm}
-				\includegraphics[width=3cm, height=2cm]{./imagenes/seleccion2.png}
+				\includegraphics[width=2.5cm, height=2cm]{./imagenes/seleccion2.png}
 				\caption{$\sigma_{A=B \; \land \; D > 5}(r)$}
 			\end{figure}
 
@@ -382,21 +387,13 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 	
 	\section{Proyección generalizada}
 		\par \textbf{Notación:} $\sqcap_{F_{1}, F_{2} \dotsc F_{n}}(E)$
+		\vspace{5mm}
 		\par Donde los $F_{1}, F_{2} \dotsc F_{n}$ son expresiones aritméticas involucrando constantes y atributos de E. Puedo permutar orden de atributos de \textit{r}.
 		
 		\vspace{5mm}
 		\par \underline{Ejemplo:} obtener el salario mensual de un instructor
 		\begin{center} instructor(ID, name, dept name, salary) \\ salary: es salario anual \end{center}
-		\[\sqcap_{ID, name, dept_name, salary \div 12} \; (instructor)\]
-
-		\begin{figure}[htb]
-				\centering
-				\includegraphics[width=2cm, height=2cm]{./imagenes/proyeccion1.png}
-				\caption{Relación \textit{r}}
-				\vspace{5mm}
-				\includegraphics[width=3cm, height=2cm]{./imagenes/proyeccion2.png}
-				\caption{$\sqcap_{A=B \; \land \; D > 5}(r)$}
-		\end{figure}
+		\[\sqcap_{ID, \; name, \; dept\_name, \; salary \; \div \; 12} \; (instructor)\]
 	
 	\section{Unión, diferencia e intersección}
 		\par Operaciones de conjuntos del mismo nombre.
@@ -421,16 +418,18 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 		\end{itemize}
 
 		\par \underline{Ejemplo:}
-		\[instructor(ID, name, dept\_name, salary) \]
-		\[teaches(ID, course id, sec id, semester, year) \]
+		\[instructor(ID, \; name, \; dept\_name, \; salary) \]
+		\[teaches(ID, \; course\_id, \; sec\_id, \; semester, \; year) \]
 		\par El esquema de $r = instructor \; x \; teaches$ es:
-		\[ (instructor.ID, instructor.name, instructor.dept\_name, instructor.salary, teaches.ID, teaches.course\_id, teaches.sec\_id, teaches.semester, teaches.year)
+		\[ (instructor.ID, \; instructor.name, \, instructor.dept\_name, \; instructor.salary, \; teaches.ID, \] 		
+		\[
+		teaches.course\_id, \; teaches.sec\_id, \; teaches.semester, \; teaches.year)
 		\]
 		\par El esquema anterior se puede simplificar a:
 		\[
-		(instructor.ID, name, dept\_name, salary, teaches.ID, course\_id, sec\_id, semester, year) \]
+		(instructor.ID, \; name, \; dept\_name, \; salary, \; teaches.ID, \; course\_id, \; sec\_id, \; semester, \; year) \]
 
-		\par Como consecuencias de la convención anterior, no se puede aplicar a $r \; x \; r$ y tampoco se puede aplicar a $r \; x \; E$ con E expresión de consulta arbitraria.
+		\par Como consecuencias de la convención anterior, no se puede aplicar a $r \; x \; r$ y tampoco se puede aplicar a $r \; x \; E$, con E expresión de consulta arbitraria.
 		
 			\begin{figure}[htb]
 				\centering
@@ -453,8 +452,8 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 			\vspace{5mm}
 			\underline{Ejemplo:}
 			$\qquad \sigma_{x . A_{1} \; = \; r . A_{1}}(\rho_{x \; (A_{1}, A_{2} \dotsc A_{n})} (E) \; x \; r) $, r tabla de la BD.
+			\vspace{5mm}
 			\par Notar que necesito dar nombre X a E para poder decir a cuál atributo A1 me refiero.
-			
 			\vspace{5mm}			
 			\par A veces solo necesito darle nombre a la tabla de una expresión de AR, por lo que asociamos nombre a una expresión de AR mediante el mecanismo de renombramiento simplificado.
 \begin{itemize}
@@ -514,7 +513,7 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 				\caption{Relaciones \textit{r} y \textit{s}}
 				\vspace{5mm}
 				\includegraphics[width=3cm, height=3cm]{./imagenes/nj2.png}
-				\caption{$r \; x \; s$}
+				\caption{$r \; \bowtie \; s$}
 		\end{figure}
 
 		\underline{Ejemplo:}
@@ -535,17 +534,17 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 		
 		\underline{Ejemplo:}
 		\begin{itemize}
-			\item persona(DNI, nombre,apellido)
-			\item libro(título,ISBN,editorial,edición)
-			\item libroBib(numInv,ISBN,nombreBib)
-			\item prestadoA(numInv,nombreBib,DNI)
-			\item socio(posición,DNI)
-			\item inscriptoEn(DNI,nombreBib)
+			\item persona(DNI, nombre, apellido)
+			\item libro(título, ISBN, editorial, edición)
+			\item libroBib(numInv, ISBN, nombreBib)
+			\item prestadoA(numInv, nombreBib, DNI)
+			\item socio(posición, DNI)
+			\item inscriptoEn(DNI, nombreBib)
 		\end{itemize}
 		\par Obtener los ISBN de los libros prestados a Juan Pérez en la biblioteca de “FaMAF”.
 
 	\section{División}
-		\par La operación división, resulta adecuada para muchas consultas que incluyen la frase “para todo” o “todos”.
+		\par La operación división, resulta adecuada para muchas consultas que incluyen la frase “para todo/s”.
 		\vspace{5mm}
 		\par \underline{Notación:} $r \div s$.
 		\vspace{3mm}
@@ -559,11 +558,11 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 
 		\begin{figure}[htb]
 				\centering
-				\includegraphics[width=5cm, height=3cm]{./imagenes/div1.png}
+				\includegraphics[width=7cm, height=5cm]{./imagenes/div1.png}
 				\caption{Relaciones \textit{r} y \textit{s}}
 				\vspace{5mm}
-				\includegraphics[width=3cm, height=3cm]{./imagenes/div2.png}
-				\caption{$r \; x \; s$}
+				\includegraphics[width=2cm, height=2cm]{./imagenes/div2.png}
+				\caption{$r \; \div \; s$}
 		\end{figure}
 		
 		\par Sea $q = r \div s$ entonces q es la relación más grande que satisface $q \; x \; s \subseteq r$.
@@ -571,13 +570,13 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 		\vspace{5mm}
 		\underline{Ejemplo:}
 		\begin{itemize}
-			\item libro(título,ISBN,editorial,edición)
-			\item libroBib(numInv,ISBN,nombreBib)
-			\item biblioteca(nombreBib,calle,número)
+			\item libro(título, ISBN, editorial, edición)
+			\item libroBib(numInv, ISBN, nombreBib)
+			\item biblioteca(nombreBib, calle, número)
 			\par Encontrar los títulos de los libros que están en todas las bibliotecas.
 		\end{itemize}
  
-		\par Proceso para hacer una consulta con división:
+		\subsubsection{Proceso para hacer una consulta con división:}
 		\begin{enumerate}
 			\item Identificar tablas a usar
 			\item Reescribir consulta en español de modo que quede más claro dónde se usa división y la división sea más evidente.
@@ -587,7 +586,7 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 				\item Luego pasarlas a AR
 			\end{itemize}
 			\item Usar proyecciones para que partes cumplan con esquemas exigidos por división.
-			\item Escribir división, chequearla usando la definición de división y corregirla
+			\item Escribir división, chequearla usando la definición de división y corregirla.
 			\item Hacer la consulta completa en AR que involucra división.
 		\end{enumerate}
 	
@@ -602,7 +601,6 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 			\item Cada $F_{i}$ es una función de agregación
 			\item Cada $A_{i}$ es un nombre de atributo
 		\end{itemize}
-
 		\par \underline{Semántica:} el resultado tiene una tupla $(a_{1}, a_{2}, \dotsc a_{n})$ donde, para cada \textit{i}, $a_{i}$ es el resultado de aplicar la función de agregación $F_{i}$ al multiconjunto de valores del atributo $A_{i}$ en E.
 		\vspace{5mm}	
 		\par Otra operación de agregación en AR más compleja
@@ -625,8 +623,8 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 		
 		\underline{Ejemplo:}
 		\begin{itemize}
-			\item bibliotecario(antiguedad,DNI)
-			\item trabajaEn(DNI,nombreBib)
+			\item bibliotecario(antiguedad, DNI)
+			\item trabajaEn(DNI, nombreBib)
 			\par Obtener el promedio de las antiguedades de los bibliotecarios que trabajan en cada biblioteca.
 		\end{itemize}
 
@@ -655,19 +653,19 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 			\begin{figure}[htb]
 				\centering
 				\includegraphics[width=9cm, height=2cm]{./imagenes/izquierda.png}
-				\caption{Instructor $\bowtie$ Teaches}
+				\caption{Instructor $\_\bowtie$ Teaches}
 			\end{figure}
 			\item Reunión externa a la derecha
 			\begin{figure}[htb]
 				\centering
 				\includegraphics[width=9cm, height=2cm]{./imagenes/derecha.png}
-				\caption{Instructor $\bowtie$ Teaches}
+				\caption{Instructor $\bowtie\_$ Teaches}
 			\end{figure}
 			\item Reunión externa full
 			\begin{figure}[htb]
 				\centering
 				\includegraphics[width=9cm, height=2cm]{./imagenes/full.png}
-				\caption{Instructor $\bowtie$ Teaches}
+				\caption{Instructor $\_\bowtie\_$ Teaches}
 			\end{figure}
 		\end{itemize}
 		
@@ -676,16 +674,17 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 	
 	\section{Manejo de valores nulos}
 		\par El resultado de una expresión aritmética involucrando null es null. Las funciones de agregación ignoran valores nulos (decisión arbitraria). Para eliminación de duplicados y agrupamientos a null se lo trata como a cualquier otro valor.
-		\par Comparaciones (como $\geq, \leq , =, >, \neq$) con valores null retorna el valor de verdad unknown. Las comparaciones que incluyan nulos pueden aparecer dentro de expresiones booleanas con conectivos.
+		\par Comparaciones (como $\geq, \leq , =, >, \neq$) con valores null retorna el valor de verdad \textit{unknown}. Las comparaciones que incluyan nulos pueden aparecer dentro de expresiones booleanas con conectivos.
+		\vspace{5mm}
 		\par Una lógica de tres valores de verdad se usa con el valor de verdad unknown.
 		\begin{itemize}
-			\item OR: (unknown or true) $=$ true,
-			\par (unknown or false) $=$ unknown,
-			\par (unknown or unknown) $=$ unknown
-			\item AND: (true and unknown) $=$ unknown, 
-			\par (false and unknown) $=$ false, 
-			\par (unknown and unknown) $=$ unknown
-			\item NOT: (not unknown) $=$ unknown
+			\item OR: (\textit{unknown} or true) $=$ true,
+			\par (\textit{unknown} or false) $=$ \textit{unknown},
+			\par (\textit{unknown} or unknown) $=$ \textit{unknown}
+			\item AND: (true and \textit{unknown}) $=$ \textit{unknown}, 
+			\par (false and \textit{unknown}) $=$ false, 
+			\par (\textit{unknown} and \textit{unknown}) $=$ \textit{unknown}
+			\item NOT: (not \textit{unknown}) $=$ \textit{unknown}
 		\end{itemize}
 
 		\begin{itemize}
@@ -698,6 +697,7 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 
 	\section{Asignación}
 		\par La asignación ($\leftarrow$) provee una manera de expresar consultas complejas. También sirve para expresar alteraciones a la BD.
+		\vspace{5mm}
 		\par Escribir la consulta como un programa secuencial consistente de:
 		\begin{enumerate}
 			\item una serie de asignaciones
@@ -707,10 +707,10 @@ traducir a un conjunto esquemas relacionales con claves primarias y restriccione
 		
 		\par \underline{Ejemplo:}
 		\begin{itemize}
-			\item persona(DNI, nombre,apellido)
-			\item biblioteca(nombreBib,calle,número)
-			\item bibliotecario(antiguedad,DNI)
-			\item trabajaEn(DNI,nombreBib)
+			\item persona(DNI, nombre, apellido)
+			\item biblioteca(nombreBib, calle, número)
+			\item bibliotecario(antiguedad, DNI)
+			\item trabajaEn(DNI, nombreBib)
 			\par Dar las bibliotecas en las que trabajan los bibliotecarios de apellido Pérez.
 			\begin{itemize}
 				\item $r \leftarrow \sigma_{apellido="Perez"} (persona \bowtie bibliotecario)$

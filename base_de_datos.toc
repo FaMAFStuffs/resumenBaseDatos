@@ -9,42 +9,43 @@
 \contentsline {section}{\numberline {1.6}Dise\IeC {\~n}o de una DB de calidad}{5}
 \contentsline {subsection}{\numberline {1.6.1}Eliminacion de informaci\IeC {\'o}n redundante}{5}
 \contentsline {subsection}{\numberline {1.6.2}Uso de CE vs Atributos}{5}
-\contentsline {subsection}{\numberline {1.6.3}Errores comunes}{5}
+\contentsline {subsection}{\numberline {1.6.3}Errores comunes}{6}
 \contentsline {subsection}{\numberline {1.6.4}Uso de CEs vs uso de CR}{6}
-\contentsline {subsection}{\numberline {1.6.5}CR de grado $\textless $ 2 vs CR binarias}{6}
+\contentsline {subsection}{\numberline {1.6.5}CR de grado $>$ 2 vs CR binarias}{6}
 \contentsline {subsection}{\numberline {1.6.6}CE d\IeC {\'e}biles vs Atributo multivalorado compuesto}{6}
 \contentsline {section}{\numberline {1.7}Especializaci\IeC {\'o}n - Generalizaci\IeC {\'o}n}{6}
-\contentsline {section}{\numberline {1.8}Esquemas e instancias relacionales}{7}
+\contentsline {section}{\numberline {1.8}Esquemas e instancias relacionales}{8}
 \contentsline {section}{\numberline {1.9}Tipos de atributos}{8}
 \contentsline {section}{\numberline {1.10}DB relacionales}{8}
-\contentsline {subsection}{\numberline {1.10.1}Superclaves}{8}
-\contentsline {subsection}{\numberline {1.10.2}Claves candidatas y primarias}{8}
+\contentsline {subsection}{\numberline {1.10.1}Superclaves}{9}
+\contentsline {subsection}{\numberline {1.10.2}Claves candidatas y primarias}{9}
 \contentsline {subsection}{\numberline {1.10.3}Claves for\IeC {\'a}neas}{9}
-\contentsline {section}{\numberline {1.11}Dise\IeC {\~n}o de una DB relacional}{9}
-\contentsline {section}{\numberline {1.12}Reducci\IeC {\'o}n a esquemas relacionales}{9}
+\contentsline {section}{\numberline {1.11}Dise\IeC {\~n}o de una DB relacional}{10}
+\contentsline {section}{\numberline {1.12}Reducci\IeC {\'o}n a esquemas relacionales}{10}
 \contentsline {subsection}{\numberline {1.12.1}Regla CEF1}{10}
 \contentsline {subsection}{\numberline {1.12.2}Regla CEF2}{10}
-\contentsline {subsection}{\numberline {1.12.3}Regla CEF3}{10}
+\contentsline {subsection}{\numberline {1.12.3}Regla CEF3}{11}
 \contentsline {subsection}{\numberline {1.12.4}Regla CR1}{11}
-\contentsline {subsection}{\numberline {1.12.5}Regla CR2}{11}
+\contentsline {subsection}{\numberline {1.12.5}Regla CR2}{12}
 \contentsline {subsection}{\numberline {1.12.6}Regla CR3}{12}
-\contentsline {subsection}{\numberline {1.12.7}Regla CED}{12}
-\contentsline {subsection}{\numberline {1.12.8}Reducci\IeC {\'o}n de generalizaci\IeC {\'o}n}{12}
-\contentsline {subsubsection}{Idea G1:}{12}
-\contentsline {subsubsection}{Idea G2:}{13}
-\contentsline {subsubsection}{Idea G3:}{13}
+\contentsline {subsection}{\numberline {1.12.7}Regla CED}{13}
+\contentsline {subsection}{\numberline {1.12.8}Reducci\IeC {\'o}n de generalizaci\IeC {\'o}n}{13}
+\contentsline {subsubsection}{Idea G1:}{13}
+\contentsline {subsubsection}{Idea G2:}{14}
+\contentsline {subsubsection}{Idea G3:}{14}
 \contentsline {chapter}{\numberline {2}Algebra Relacional}{15}
 \contentsline {section}{\numberline {2.1}Selecci\IeC {\'o}n}{15}
 \contentsline {section}{\numberline {2.2}Proyecci\IeC {\'o}n}{16}
 \contentsline {section}{\numberline {2.3}Proyecci\IeC {\'o}n generalizada}{16}
 \contentsline {section}{\numberline {2.4}Uni\IeC {\'o}n, diferencia e intersecci\IeC {\'o}n}{17}
 \contentsline {section}{\numberline {2.5}Producto cartesiano}{17}
-\contentsline {section}{\numberline {2.6}Renombramiento}{18}
+\contentsline {section}{\numberline {2.6}Renombramiento}{17}
 \contentsline {subsubsection}{\IeC {\textquestiondown }C\IeC {\'o}mo dar nombres de atributo a columnas de tabla asociada a expresi\IeC {\'o}n de consulta de AR?}{18}
-\contentsline {section}{\numberline {2.7}Definici\IeC {\'o}n del AR}{19}
+\contentsline {section}{\numberline {2.7}Definici\IeC {\'o}n del AR}{18}
 \contentsline {section}{\numberline {2.8}V\IeC {\'\i }nculo de AR con SQL}{19}
 \contentsline {section}{\numberline {2.9}Reuni\IeC {\'o}n natural}{19}
-\contentsline {section}{\numberline {2.10}Divisi\IeC {\'o}n}{21}
+\contentsline {section}{\numberline {2.10}Divisi\IeC {\'o}n}{20}
+\contentsline {subsubsection}{Proceso para hacer una consulta con divisi\IeC {\'o}n:}{21}
 \contentsline {section}{\numberline {2.11}Agregaci\IeC {\'o}n}{22}
 \contentsline {section}{\numberline {2.12}Reuniones externas}{23}
 \contentsline {section}{\numberline {2.13}Manejo de valores nulos}{24}
